@@ -155,9 +155,6 @@ export default {
         maxTime: 0,
         volume: 100
       },
-      fullButton: {
-        full: false
-      },
       topbar: {
         active: ""
       },
@@ -169,7 +166,7 @@ export default {
     Foot
   },
   created: function() {
-    console.log(this.$data);
+    console.log(this.$route);
     // => { message: "goodbye", foo: "abc", bar: "def" }
   },
   methods: {
@@ -201,24 +198,7 @@ export default {
           break;
       }
     },
-    moveIcon(index) {
-      let width = window.innerWidth;
-      this.randomIcon[index]["top"] = this.$util.randomInt(20, 300);
-      let left = this.$util.randomInt(10, width - 310);
-      if (left > width / 2 - 150) {
-        left += 300;
-      }
-      this.randomIcon[index]["left"] = left;
-    },
-    full() {
-      if (!this.fullButton.full) {
-        this.$util.fullScreen();
-        this.fullButton.full = true;
-      } else {
-        this.$util.fullExit();
-        this.fullButton.full = false;
-      }
-    },
+
     listenMusic() {
       if (!this.$refs.music) {
         return;

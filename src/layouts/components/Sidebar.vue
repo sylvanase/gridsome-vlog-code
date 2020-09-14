@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     let arr = this.$route.path.split("/");
-    console.log(this.$route.path);
+    console.log(this.$route);
     console.log(arr);
     this.active = "/" + arr[1] + "/" + arr[2];
   },
@@ -36,13 +36,6 @@ export default {
     onSelect(index) {
         this.$router.push(index)
     },
-    // openTokenDialog() {
-    //     this.$refs.tokenDialog.open(() => {
-    //     })
-    // },
-    // cancellation() {
-    //     this.$store.dispatch("Cancellation")
-    // }
   }
 };
 </script>

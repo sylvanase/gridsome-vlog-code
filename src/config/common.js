@@ -19,7 +19,6 @@ export default {
         {
           path: '/',
           meta: {
-            type: 'user',
             icon: 'el-icon-star-off',
             title: '最新动态',
           },
@@ -31,66 +30,26 @@ export default {
           ],
         },
         {
-          path: '/user/social',
+          path: '/social',
           meta: {
             type: 'user',
             icon: 'el-icon-mobile-phone',
             title: '社交圈',
           },
-          children: [
-            {
-              path: 'main',
-              meta: { title: '社交圈' },
-            },
-            {
-              path: 'details/:name',
-              meta: { title: '用户资料' },
-            },
-          ],
         },
         {
-          path: '/user',
+          path: '/blog',
           meta: {
-            type: 'user',
             icon: 'el-icon-edit-outline',
             title: '博客列表',
           },
-          children: [
-            {
-              path: 'main',
-              meta: { title: '博客列表' },
-            },
-            {
-              path: 'add',
-              meta: { title: '发表博客' },
-            },
-            {
-              path: 'edit/:id',
-              meta: { title: '编辑博客' },
-            },
-            {
-              path: 'details/:id',
-              meta: { title: '博客详情' },
-            },
-          ],
         },
         {
-          path: '/user/project',
+          path: '/project',
           meta: {
-            type: 'user',
             icon: 'el-icon-service',
             title: '开源项目',
           },
-          children: [
-            {
-              path: 'main',
-              meta: { title: '项目列表' },
-            },
-            {
-              path: 'details/:name',
-              meta: { title: '项目详情' },
-            },
-          ],
         },
       ],
     }
