@@ -78,7 +78,7 @@
               >{{$util.formatTime(music.currentTime)}}/{{$util.formatTime(music.maxTime)}}</el-col>
             </el-row>
 <!-- autoplay -->
-            <audio ref="music" loop >
+            <audio ref="music" loop autoplay>
               <source :src="audioUrl" type="audio/mpeg" />
             </audio>
           </el-col>
