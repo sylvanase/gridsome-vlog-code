@@ -10,14 +10,20 @@
             <el-input v-model="form.description" type="textarea"></el-input>
           </el-form-item>
           <el-form-item label="博客正文" prop="content">
-            <mavon-editor
+            <el-input
+              type="textarea"
+              :rows="2"
+              placeholder="请输入内容"
+              v-model="form.content">
+            </el-input>
+            <!-- <mavon-editor
               @imgAdd="imgAdd"
               style="max-height: 500px"
               ref="md"
               v-model="form.content"
               :subfield="false"
               :toolbars="mavonEditorToolbars"
-            />
+            /> -->
           </el-form-item>
           <el-form-item>
             <el-button
