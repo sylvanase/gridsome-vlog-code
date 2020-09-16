@@ -111,7 +111,7 @@
               <i class="el-icon-location"></i>
               &emsp;{{location}}
               <br />
-              <img :src="avatarUrl" style="width: 200px;height: 200px;" />
+              <img :src="'http://101.133.173.90:1337' + avatarUrl" style="width: 200px;height: 200px;" />
             </el-popover>
           </el-col>
         </el-row>
@@ -165,11 +165,39 @@ export default {
     Sidebar,
     Foot
   },
-  created: function() {
-    console.log(this.$route);
-    // => { message: "goodbye", foo: "abc", bar: "def" }
+  mounted() {
+    let width = window.innerWidth;
+    for (let i = 0; i < 12; i++) {
+      let temp = {};
+      let left = this.randomInt(10, width - 310);
+      if (left > width / 2 - 150) {
+        left += 300;
+      }
+      temp["left"] = left;
+      temp["top"] = this.randomInt(20, 300);
+      temp["size"] = this.randomInt(20, 40);
+      this.randomIcon.push(temp);
+    }
   },
   methods: {
+    randomInt(s, e) {
+      let d = e - s;
+      if (d < 0) {
+        return s;
+      }
+      let r = Math.random() * d + s;
+      r = parseInt(r, 10);
+      return r;
+    },
+    moveIcon(index) {
+      let width = window.innerWidth;
+      this.randomIcon[index]["top"] = this.randomInt(20, 300);
+      let left = this.randomInt(10, width - 310);
+      if (left > width / 2 - 150) {
+        left += 300;
+      }
+      this.randomIcon[index]["left"] = left;
+    },
     selectTopbar(index) {
       //取消菜单选中状态
       this.topbar.active = this.topbar.active == "" ? " " : "";

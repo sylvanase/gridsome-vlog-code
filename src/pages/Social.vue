@@ -15,7 +15,7 @@
                 >
                   <el-card shadow="hover" style="font-size: 13px;color: #606266;line-height: 20px">
                     <i class="el-icon-star-off"></i>&emsp;
-                    <g-link :to="'/social/detail/' + item.node.name">{{item.node.name}}</g-link>
+                    <g-link :to="'/social/follower/' + item.node.id">{{item.node.name}}</g-link>
                     <br />
                     <i class="el-icon-message"></i>&emsp;
                     <a
@@ -25,7 +25,7 @@
                     >TA的主页</a>
                     <br />
                     <img
-                      :src="item.node.avatarUrl.url"
+                      :src="'http://101.133.173.90:1337'+item.node.avatarUrl.url"
                       style="width: 100%;border-radius:5px;margin-top: 5px"
                     />
                   </el-card>
@@ -56,7 +56,7 @@
                 >
                   <el-card shadow="hover" style="font-size: 13px;color: #606266;line-height: 20px">
                     <i class="el-icon-star-off"></i>&emsp;
-                    <g-link :to="'/social/detail/' + item.node.name">{{item.node.name}}</g-link>
+                    <g-link :to="'/social/following/' + item.node.id ">{{item.node.name}}</g-link>
                     <br />
                     <i class="el-icon-message"></i>&emsp;
                     <a
@@ -66,7 +66,7 @@
                     >TA的主页</a>
                     <br />
                     <img
-                      :src="item.node.avatarUrl.url"
+                      :src="'http://101.133.173.90:1337' + item.node.avatarUrl.url"
                       style="width: 100%;border-radius:5px;margin-top: 5px"
                     />
                   </el-card>
